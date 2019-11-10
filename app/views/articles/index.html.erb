@@ -1,8 +1,5 @@
 
 <%= link_to "ログアウト", destroy_user_session_path, method: :delete %><br>
-<% @articles["articles"].each do |item| %>
-    <p><%= item["author"] %></p>
-    <p><%= item["title"] %></p>
-    <p><%= item["content"] %></p>
-    <hr>
+<% @tips.each do |i| %>
+    <%= i.author %>
 <% end %>

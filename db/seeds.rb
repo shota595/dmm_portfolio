@@ -15,6 +15,15 @@ AdminUser.create!(email: 'admin@example.com', password: 'password', password_con
 # articles = JSON.parse(article_serialized)
 
 # articles['articles'].each do |item|
-#     Exchange.create(item["author"])
+#     Article.create(author: item["author"])
 # end
 
+# require "open-uri"
+# require "news-api"
+
+# url = 'https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey='
+# article_serialized = open(url).read
+# articles = JSON.parse(article_serialized)
+
+# articles['articles'].each do |key|
+#     Article.create(title: key,  )
