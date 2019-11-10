@@ -4,8 +4,9 @@ class ArticlesController < ApplicationController
   require "news-api"
 
   def index
-    api_key = ''
-    url = 'https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=' + api_key
+    news_API = ENV["news_API"]
+
+    url = 'https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=' + news_API
     article_serialized = open(url).read
     articles = JSON.parse(article_serialized)
     # @num = @articles["totalResults"].to_i
@@ -17,6 +18,7 @@ class ArticlesController < ApplicationController
 
 
     # News APIから取得したデータをデータベースに保存
+    #実装したいコード：データベースに検索をかけてあればsaveをしない、なければsaveをする
     articles["articles"].each do |item|
       begin
         article =Article.create!({author:item["author"],
