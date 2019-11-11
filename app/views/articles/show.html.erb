@@ -1,2 +1,6 @@
-<h1>Articles#show</h1>
-<p>Find me in app/views/articles/show.html.erb</p>
+<%= link_to "ログアウト", destroy_user_session_path, method: :delete %><br>
+<h1><%= @article.title %></h1>
+<p><%= @article.author %></p>
+<p><%= @article.published_at %></p>
+<p><%= @article.content %></p>
+<p><%= @article.article_url %></p>

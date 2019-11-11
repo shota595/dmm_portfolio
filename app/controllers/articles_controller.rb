@@ -34,10 +34,12 @@ class ArticlesController < ApplicationController
       end
     end
     @tips = Article.all
+    # @tip = Article.find(params[:id])
 
   end
 
   def show
+    @article = Article.find(params[:id])
   end
 end
 
