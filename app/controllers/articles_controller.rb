@@ -5,8 +5,8 @@ class ArticlesController < ApplicationController
 
   def index
     news_API = ENV["news_API"]
-
-    url = 'https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=' + news_API
+    genre = 
+    url = 'https://newsapi.org/v2/top-headlines?sources=abc-news&apiKey=' + news_API
     article_serialized = open(url).read
     articles = JSON.parse(article_serialized)
     # @num = @articles["totalResults"].to_i

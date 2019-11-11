@@ -72,3 +72,4 @@ gem 'font-awesome-rails'
 gem 'activeadmin'
 gem 'news-api'
 gem 'dotenv-rails'
+gem 'whenever', require: false
