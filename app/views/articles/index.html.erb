@@ -1,8 +1,13 @@
 
 <%= link_to "ログアウト", destroy_user_session_path, method: :delete %><br>
 <div id="news">
-    <% @tips.each do |tip| %>
-        <%= link_to article_path(tip.id) do %><%= tip.title %><% end %>
-    <% end %>
+    <ol>
+        <li>
+        <% @tips.each do |tip| %>
+            <li>
+                <%= link_to article_path(tip.id) do %><%= tip.title %><% end %><br>
+            </li>
+        <% end %>
+    </ol>
 </div>
 

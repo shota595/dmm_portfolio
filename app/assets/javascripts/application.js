@@ -19,7 +19,7 @@
 //= require popper
 //= require bootstrap-sprockets
 
-$(function() {
+$(document).on('turbolinks:load', function() {
     $('#textarea').on('mouseup', function(){  //mouseupでイベント発火（クリックを離すと発火）
         var selectedStr;
         if(window.getSelection){  //selectionオブジェクト取得
@@ -30,5 +30,6 @@ $(function() {
         }
     });
 });
+
 
 
