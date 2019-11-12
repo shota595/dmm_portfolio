@@ -33,7 +33,8 @@ class Article < ApplicationRecord
     url = 'https://newsapi.org/v2/top-headlines?sources=abc-news&apiKey=' + news_API
     article_serialized = open(url).read
     articles = JSON.parse(article_serialized)
-
+    # News APIから取得したデータをデータベースに保存
+    #実装したいコード：データベースに検索をかけてあればsaveをしない、なければsaveをする
     articles["articles"].each do |item|
       begin
         article =Article.create!(

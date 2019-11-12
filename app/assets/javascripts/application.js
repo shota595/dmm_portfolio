@@ -18,3 +18,17 @@
 //= require jquery_ujs
 //= require popper
 //= require bootstrap-sprockets
+
+$(function() {
+    $('#textarea').on('mouseup', function(){  //mouseupでイベント発火（クリックを離すと発火）
+        var selectedStr;
+        if(window.getSelection){  //selectionオブジェクト取得
+            selectedStr = window.getSelection().toString();  //文章取得
+            if(selectedStr !== '' && selectedStr !== '\n'){  //文章チェック
+            $('h1').prepend('<p>' + selectedStr + '</p>');
+            }
+        }
+    });
+});
+
+
