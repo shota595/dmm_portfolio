@@ -1,18 +1,22 @@
 
 <%= link_to "ログアウト", destroy_user_session_path, method: :delete %><br>
-<div id="news">
-    <ul>
-        <% @tips.each do |tip| %>
-            <div class="article col-md-12">
-                <li>
-                    <div class="article"
-                    <%= link_to article_path(tip.id) do %>
-                        <%= image_tag 'no_image.jpg' %>
-                        <%= tip.title %>
-                    <% end %><br>
-                </li>
-            </div>
-        <% end %>
-    </ul>
+<div class="container">
+    <div class="row">
+        <div id="news col-xs-offset-2 col-xs-8">
+            <ul>
+                <% @tips.each do |tip| %>
+                    <div class="article">
+                        <li>
+                            <div class="article">
+                            <%= link_to article_path(tip.id) do %>
+                                <%= image_tag 'no_image.jpg' %>
+                                <%= tip.title %>
+                            <% end %><br>
+                        </li>
+                    </div>
+                <% end %>
+            </ul>
+        </div>
+    </div>
 </div>
 

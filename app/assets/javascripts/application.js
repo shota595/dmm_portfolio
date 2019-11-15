@@ -70,7 +70,7 @@ $(document).on('turbolinks:load', function() {
 
                     const arr = JSON.parse(sessionStorage.getItem("tdata"));
                     
-                    // if (arr === null || arr.time + 1000 * 60 * 8 < nowtime) { //トークンの利用可能時間8分、sessionstorageに保存して再利用するための記述
+                    if (arr === null || arr.time + 1000 * 60 * 8 < nowtime) { //トークンの利用可能時間8分、sessionstorageに保存して再利用するための記述
                         $.ajax({
                             url: 'https://api.cognitive.microsoft.com/sts/v1.0/issueToken',
                             type: 'POST',
@@ -90,7 +90,7 @@ $(document).on('turbolinks:load', function() {
                             // sessionStorage.setItem('tdata', JSON.stringify(datalist));
                         });
                             return defer.promise();
-                    // };
+                    };
 
                     // const arr2 = JSON.parse(sessionStorage.getItem("tdata"));
                     // const token = arr2.token;
@@ -116,7 +116,7 @@ $(document).on('turbolinks:load', function() {
 
                     const data = response.responseText;
                     const translation = data.replace(/<("[^"]*"|'[^']*'|[^'">])*>/g, '');
-                    if true
+      
                     $('h1').prepend().text(translation);
                 });
                 //microsoft translator text APIの記述終了
@@ -155,7 +155,13 @@ $(document).on('turbolinks:load', function() {
             }
         }
     });
+
+    
 });
 
-
-
+$(function() {
+    $('.navbar_toggle').on('click', function() {
+        $(this).toggleClass('open');
+        $('.menu').toggleClass('open');
+    });
+});
