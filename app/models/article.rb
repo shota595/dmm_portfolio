@@ -24,6 +24,7 @@ class Article < ApplicationRecord
   has_many :browsing_histories
   has_many :favorites
 
+  paginates_per 5
 
 
   def self.get_news

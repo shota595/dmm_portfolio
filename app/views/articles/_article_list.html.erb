@@ -1,0 +1,11 @@
+<% @articles.each do |article| %>
+    <div class="article">
+        <li>
+            <div class="article">
+            <%= link_to article_path(article.id) do %>
+                <%= image_tag 'no_image.jpg' %>
+                <%= article.title %>
+            <% end %><br>
+        </li>
+    </div>
+<% end %>

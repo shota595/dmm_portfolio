@@ -3,18 +3,12 @@
 <div class="container">
     <div class="row">
         <div id="news col-xs-offset-2 col-xs-8">
+            <h1>最新記事</h1>
             <ul>
-                <% @tips.each do |tip| %>
-                    <div class="article">
-                        <li>
-                            <div class="article">
-                            <%= link_to article_path(tip.id) do %>
-                                <%= image_tag 'no_image.jpg' %>
-                                <%= tip.title %>
-                            <% end %><br>
-                        </li>
-                    </div>
-                <% end %>
+                <div id="article_lists">
+                    <%= render 'article_list' %>
+                </div>
+                <div class="more"><%= link_to_next_page @articles, 'もっと見る', remote: true, id: 'view_more' %></div>
             </ul>
         </div>
     </div>

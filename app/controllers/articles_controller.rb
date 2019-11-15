@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
   require "news-api"
 
   def index
-    @tips = Article.all
+    @articles = Article.order(created_at: :desc).page(params[:page])
   end
 
   def show
