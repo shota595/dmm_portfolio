@@ -32,6 +32,6 @@ class User < ApplicationRecord
 
   has_many :searchwords
   has_many :favorites
-  has_many :browsing_histories
+  has_many :browsing_histories, dependent: :destroy
   
 end
