@@ -1,0 +1,6 @@
+<%= link_to "記事一覧", articles_path %>
+<% @histories.each do |history| %>
+    <%= link_to article_path(history.article_id) do %>
+        <p><%= history.article[:title] %></p>
+    <% end %>
+<% end %>

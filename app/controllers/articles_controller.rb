@@ -9,9 +9,22 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
-    # history = @article.browsing_histories.news
-    # history.user_id = current_user.id
 
+    # 閲覧履歴の作成/古い方の履歴
+    history = @article.browsing_histories.new
+    history.user_id = current_user.id
+    if current_user.browsing_histories.exists?(article_id: "#{params[:id]}")
+      old_history = current_user.browsing_histories.find_by(article_id: "#{params[:id]}")
+      old_history.destroy
+    end
+    history.save
+
+    # 一人のユーザーが保有できる閲覧履歴の設定
+    histories_stock_limit = 10
+    histories = current_user.browsing_histories.all
+    if histories.count > histories_stock_limit
+      histories[0].destroy
+    end
   end
 
 

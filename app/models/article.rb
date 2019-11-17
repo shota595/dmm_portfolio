@@ -21,7 +21,7 @@
 class Article < ApplicationRecord
   validates :title, uniqueness: true, presence: true
   belongs_to :genre
-  has_many :browsing_histories
+  has_many :browsing_histories, dependent: :destroy
   has_many :favorites
 
   paginates_per 5

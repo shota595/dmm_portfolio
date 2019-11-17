@@ -13,7 +13,7 @@
     <div class="header">
       <nav>
         <div class="drawer">
-          <a class="navbar_brand" href="#">Navbar</a>
+          <a class="navbar_brand" href="#">Tnews</a>
           <div class="navbar_toggle">
             <span class="navbar_toggle_icon"></span>
             <span class="navbar_toggle_icon"></span>
@@ -22,7 +22,7 @@
         </div>
         <div class="menu">
           <ul>
-            <li><a href="#">Home</a></li>
+            <li><%= link_to user_browsing_histories_path(user_id: current_user.id) do %>閲覧履歴<% end %></li>
             <li><a href="#">About</a></li>
             <li><a href="#">Service</a></li>
             <li><a href="#">access</a></li>

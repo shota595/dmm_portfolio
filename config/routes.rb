@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'browsing_histories/index'
+  get 'browsing_history/index'
   root 'articles#index'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -16,13 +18,15 @@ Rails.application.routes.draw do
   end
 
   resources :articles, only: [:index, :show]
-  # POST "articles/:id" => "articles#save_article"
 
   # searchwordを保存するアクションのURL
   get "articles/:id/save" => "articles#save_word"
 
-  resources :users, only: [:show]
-  resources :article_histories, only: [:index]
+  resources :users, only: [:show] do
+    resources :browsing_histories, only: [:index]
+    # get 'users/:id/browsing_histories' => 'browsing_histories#index'
+
+  end
   resources :searchwords, only: [:index, :create, :destroy]
   resources :favorites, only: [:create, :destroy]
   resources :genres, only: [:create]
