@@ -20,15 +20,6 @@
 //= require bootstrap-sprockets
 
 $(document).on('turbolinks:load', function() {
-    //閲覧した記事を保存する（articlesのコントローラーを叩く）
-    // $.ajax({
-    //     url: 'articles/:id',
-    //     type: 'POST',
-        
-
-    // })
-
-
     $('#textarea').on('mouseup', function(){ //mouseupでイベント発火（クリックを離すと発火）
 
         var selectedStr;
@@ -49,7 +40,7 @@ $(document).on('turbolinks:load', function() {
                             headers: {
                                 'Content-Type': 'application/json',
                                 'Accept': 'application/jwt',
-                                'Ocp-Apim-Subscription-Key': '9bd3c52b30fc4a2a8f16faa5bff5971f',
+                                'Ocp-Apim-Subscription-Key': 'API_key',
                             }
                         }).done(function(data) {
                             const token = data;
