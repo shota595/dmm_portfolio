@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'browsing_histories/index'
-  get 'browsing_history/index'
   root 'articles#index'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -24,8 +22,6 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show] do
     resources :browsing_histories, only: [:index]
-    # get 'users/:id/browsing_histories' => 'browsing_histories#index'
-
   end
   resources :searchwords, only: [:index, :create, :destroy]
   resources :favorites, only: [:create, :destroy]
