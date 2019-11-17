@@ -3,8 +3,11 @@
         <li>
             <div class="article">
             <%= link_to article_path(article.id) do %>
-                <%= image_tag 'no_image.jpg' %>
-                <%= article.title %>
+                <div><%= image_tag 'no_image.jpg' %></div>
+                <ul>
+                    <li><%= article.title %></li>
+                    <li><%= article.favorites.count %></li>
+                </ul>
             <% end %><br>
         </li>
     </div>

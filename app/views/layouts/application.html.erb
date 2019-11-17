@@ -13,7 +13,9 @@
     <div class="header">
       <nav>
         <div class="drawer">
-          <a class="navbar_brand" href="#">Tnews</a>
+          <%= link_to articles_path, class: "navbar_brand" do %>
+            Tnews
+          <% end %>
           <div class="navbar_toggle">
             <span class="navbar_toggle_icon"></span>
             <span class="navbar_toggle_icon"></span>

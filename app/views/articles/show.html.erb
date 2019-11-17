@@ -2,7 +2,10 @@
 <div id='textarea'>
     <!-- jsでarticleのidを受け取る用（hiddenで非表示）-->
     <input type="hidden" value="<%= @article.id %>" class="articleID">
-    <h1><%= @article.title %></h1>
+    <h1>
+        <%= @article.title %>
+        <div id='favorite'><%= render 'favorites/favorite', article: @article %></div>
+    </h1>
     <p><%= @article.author %></p>
     <p><%= @article.published_at %></p>
     <p><%= @article.content %></p>

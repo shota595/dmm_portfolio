@@ -15,8 +15,9 @@ Rails.application.routes.draw do
     get "sign_out", to: "users/sessions#destroy"
   end
 
-  resources :articles, only: [:index, :show]
-
+  resources :articles, only: [:index, :show] do
+    resource :favorites, only: [:create, :destroy]
+  end
   # searchwordを保存するアクションのURL
   get "articles/:id/save" => "articles#save_word"
 
@@ -24,6 +25,5 @@ Rails.application.routes.draw do
     resources :browsing_histories, only: [:index]
   end
   resources :searchwords, only: [:index, :create, :destroy]
-  resources :favorites, only: [:create, :destroy]
   resources :genres, only: [:create]
 end

@@ -9,7 +9,7 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
-
+    @favorite = Favorite.new
     # 閲覧履歴の作成/古い方の履歴
     history = @article.browsing_histories.new
     history.user_id = current_user.id

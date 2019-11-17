@@ -22,7 +22,8 @@ class Article < ApplicationRecord
   validates :title, uniqueness: true, presence: true
   belongs_to :genre
   has_many :browsing_histories, dependent: :destroy
-  has_many :favorites
+  has_many :favorites, dependent: :destroy
+  has_many :liking_users, through: :likes, source: :user
 
   paginates_per 5
 
@@ -47,4 +48,8 @@ class Article < ApplicationRecord
       end
     end
   end 
+
+  def favorited_by?(user)
+    favorites.where(user_id: user.id).exists?
+  end
 end
