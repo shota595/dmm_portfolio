@@ -1,9 +1,14 @@
 <%= link_to "ログアウト", destroy_user_session_path, method: :delete %><br>
 <div id='textarea'>
-    
+    <!-- jsでarticleのidを受け取る用（hiddenで非表示）-->
+    <input type="hidden" value="<%= @article.id %>" class="articleID">
     <h1><%= @article.title %></h1>
     <p><%= @article.author %></p>
     <p><%= @article.published_at %></p>
     <p><%= @article.content %></p>
     <p><%= @article.article_image %></p>
+</div>
+<div class="list popup mfp-hide">
+    <h2 id="word"></h2>
+    <p id="description"></p>
 </div>

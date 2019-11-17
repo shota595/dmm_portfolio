@@ -16,6 +16,11 @@ Rails.application.routes.draw do
   end
 
   resources :articles, only: [:index, :show]
+  # POST "articles/:id" => "articles#save_article"
+
+  # searchwordを保存するアクションのURL
+  get "articles/:id/save" => "articles#save_word"
+
   resources :users, only: [:show]
   resources :article_histories, only: [:index]
   resources :searchwords, only: [:index, :create, :destroy]
