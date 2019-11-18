@@ -20,15 +20,6 @@
 //= require bootstrap-sprockets
 
 $(document).on('turbolinks:load', function() {
-    //閲覧した記事を保存する（articlesのコントローラーを叩く）
-    // $.ajax({
-    //     url: 'articles/:id',
-    //     type: 'POST',
-        
-
-    // })
-
-
     $('#textarea').on('mouseup', function(){ //mouseupでイベント発火（クリックを離すと発火）
 
         var selectedStr;
