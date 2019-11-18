@@ -32,6 +32,7 @@ $(document).on('turbolinks:load', function() {
                 //microsoft translator text APIの記述
                 const getToken = function() {
                     const defer =$.Deferred();
+                    const KEY = gon.translate_key; //環境変数
                     // const arr = JSON.parse(sessionStorage.getItem("tdata"));
                     // if (arr === null || arr.time + 1000 * 60 * 8 < nowtime) { //トークンの利用可能時間8分、sessionstorageに保存して再利用する分岐
                         $.ajax({
@@ -40,7 +41,7 @@ $(document).on('turbolinks:load', function() {
                             headers: {
                                 'Content-Type': 'application/json',
                                 'Accept': 'application/jwt',
-                                'Ocp-Apim-Subscription-Key': 'API_key',
+                                'Ocp-Apim-Subscription-Key': KEY,
                             }
                         }).done(function(data) {
                             const token = data;

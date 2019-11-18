@@ -73,3 +73,5 @@ gem 'activeadmin'
 gem 'news-api'
 gem 'dotenv-rails'
 gem 'whenever', require: false
+gem 'gon'
+gem 'dotenv-rails'

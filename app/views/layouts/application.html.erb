@@ -6,6 +6,7 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= include_gon %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
@@ -22,14 +23,25 @@
             <span class="navbar_toggle_icon"></span>
           </div>
         </div>
-        <div class="menu">
-          <ul>
-            <li><%= link_to user_browsing_histories_path(user_id: current_user.id) do %>閲覧履歴<% end %></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Service</a></li>
-            <li><a href="#">access</a></li>
-          </ul>
-        </div>
+        <% if user_signed_in? %>
+          <div class="menu">
+            <ul>
+              <li><%= link_to user_browsing_histories_path(current_user.id) do %>閲覧履歴<% end %></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Service</a></li>
+              <li><a href="#">access</a></li>
+            </ul>
+          </div>
+        <% else %>
+          <div class="menu">
+            <ul>
+              <li><a href='#'>Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Service</a></li>
+              <li><a href="#">access</a></li>
+            </ul>
+          </div>
+        <% end %>
       </nav>
     </div>
     <%= yield %>
