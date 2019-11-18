@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
   require "open-uri"
   require "news-api"
@@ -10,6 +11,7 @@ class ArticlesController < ApplicationController
   def show
     @article = Article.find(params[:id])
     @favorite = Favorite.new
+    gon.translate_key = ENV['translate_API']
     # 閲覧履歴の作成/古い方の履歴
     history = @article.browsing_histories.new
     history.user_id = current_user.id
