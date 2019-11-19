@@ -1,0 +1,10 @@
+<ul>
+    <div class="upper-btn">
+        <li><%= link_to articles_path do %><div class="btn btn-success col-12"><p>FaVo Articles</p></div><% end %></li>
+        <li><%= link_to user_searchwords_path(current_user.id) do %><div class="btn btn-success col-12"><p>SearcHed WOrds</p></div><% end %></li>
+    </div>
+    <div class="down-btn">
+        <li><%= link_to user_browsing_histories_path(current_user.id) do %><div class="btn btn-success col-12"><p>BrowsEd ArTicleS</p></div><% end %></li>
+        <li><%= link_to articles_path do %><div class="btn btn-success col-12"><p>COMING SOON!!</p></div><% end %></li>
+    </div>
+</ul>

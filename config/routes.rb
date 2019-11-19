@@ -23,7 +23,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show] do
     resources :browsing_histories, only: [:index]
+    resources :searchwords, only: [:index, :create, :destroy]
   end
-  resources :searchwords, only: [:index, :create, :destroy]
   resources :genres, only: [:create]
 end

@@ -6,7 +6,7 @@
             <h1>最新記事</h1>
             <ul>
                 <div id="article_lists">
-                    <%= render 'article_list' %>
+                    <strong><%= render 'article_list' %></strong>
                 </div>
                 <div class="more"><%= link_to_next_page @articles, 'もっと見る', remote: true, id: 'view_more' %></div>
             </ul>

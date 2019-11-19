@@ -26,6 +26,8 @@ $(document).on('turbolinks:load', function() {
         var selectedStr;
         if(window.getSelection){  //selectionオブジェクト取得
             selectedStr = window.getSelection().toString();  //文章取得
+            // $('#description').text('');
+            // $('#description').text('');
             if(selectedStr !== '' && selectedStr !== '\n'){  //文章チェック
                 const translation = translate_word(selectedStr,true); //翻訳の関数を呼び出す(※trueは関数のdisplayFlagを実行するために使用)
                 $('#word').text(selectedStr);
@@ -94,8 +96,8 @@ function translate_word(selectedStr, displayFlag) {
         const data = response.responseText;
         translation = data.replace(/<("[^"]*"|'[^']*'|[^'">])*>/g, '');
 
-        if(displayFlag){  //一番初めに指定した単語・文章は選択文、翻訳ともに画面に表示
-            if (translation.match(/[a-zA-Z]/)) {
+        if(displayFlag === true){  //一番初めに指定した単語・文章は選択文、翻訳ともに画面に表示
+            if (!(translation.match(/[a-zA-Z]/))) {
                 $('#word').text(selectedStr);
                 $('#description').text(translation);
             }
