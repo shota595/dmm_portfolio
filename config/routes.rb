@@ -26,4 +26,5 @@ Rails.application.routes.draw do
     resources :searchwords, only: [:index, :create, :destroy]
   end
   resources :genres, only: [:create]
+  get "techcrunch" => "articles#techcrunch", as: "techcrunch"
 end

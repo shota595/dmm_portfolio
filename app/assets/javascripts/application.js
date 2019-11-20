@@ -30,8 +30,6 @@ $(document).on('turbolinks:load', function() {
             // $('#description').text('');
             if(selectedStr !== '' && selectedStr !== '\n'){  //文章チェック
                 const translation = translate_word(selectedStr,true); //翻訳の関数を呼び出す(※trueは関数のdisplayFlagを実行するために使用)
-                $('#word').text(selectedStr);
-                $('#description').text(translation);
             }
         }
     });
@@ -98,6 +96,7 @@ function translate_word(selectedStr, displayFlag) {
 
         if(displayFlag === true){  //一番初めに指定した単語・文章は選択文、翻訳ともに画面に表示
             if (!(translation.match(/[a-zA-Z]/))) {
+                $(".popup, .popup-content").addClass("active");
                 $('#word').text(selectedStr);
                 $('#description').text(translation);
             }
@@ -121,3 +120,9 @@ function save_splitword(selectedStr) {　　//選択した範囲に複数単語�
         translate_word(array[0][i],false);
     }
 }
+
+$(document).on('turbolinks:load', function() {
+    $(".close").on("click", function() {
+        $(".popup, .popup-content").removeClass("active");
+    });
+});

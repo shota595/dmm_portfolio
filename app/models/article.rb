@@ -25,7 +25,7 @@ class Article < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :liking_users, through: :likes, source: :user
 
-  paginates_per 5
+  paginates_per 10
 
 
   def self.get_news
@@ -43,6 +43,27 @@ class Article < ApplicationRecord
           {author:item["author"],title:item["title"],content:item["content"],
           article_image:item["url"] ,article_url:item["urlToImage"] ,
           published_at:item["publishedAt"],genre_id:1})
+      rescue
+        next
+      end
+    end
+  end 
+
+  def self.get_technologynews
+    require "open-uri"
+    require "news-api"
+    news_API = ENV["news_API"]
+    url = 'https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=' + news_API
+    article_serialized = open(url).read
+    articles = JSON.parse(article_serialized)
+    # News APIから取得したデータをデータベースに保存
+    #実装したいコード：データベースに検索をかけてあればsaveをしない、なければsaveをする
+    articles["articles"].each do |item|
+      begin
+        article =Article.create!(
+          {author:item["author"],title:item["title"],content:item["content"],
+          article_image:item["url"] ,article_url:item["urlToImage"] ,
+          published_at:item["publishedAt"],genre_id:2})
       rescue
         next
       end
