@@ -12,38 +12,24 @@
 
   <body>
     <div class="header">
-      <nav>
-        <div class="drawer">
-          <%= link_to articles_path, class: "navbar_brand" do %>
-            Tnews
+      <div class="header-container">
+        <div class="header-title text-center">
+          <%= link_to articles_path do %>
+            <p><strong>Tnews</strong></p>
           <% end %>
-          <div class="navbar_toggle">
-            <span class="navbar_toggle_icon"></span>
-            <span class="navbar_toggle_icon"></span>
-            <span class="navbar_toggle_icon"></span>
-          </div>
         </div>
-        <% if user_signed_in? %>
-          <div class="menu">
-            <ul>
-              <li><%= link_to user_browsing_histories_path(current_user.id) do %>閲覧履歴<% end %></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Service</a></li>
-              <li><a href="#">access</a></li>
-            </ul>
-          </div>
-        <% else %>
-          <div class="menu">
-            <ul>
-              <li><a href='#'>Home</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Service</a></li>
-              <li><a href="#">access</a></li>
-            </ul>
-          </div>
-        <% end %>
-      </nav>
+      </div>
     </div>
-    <%= yield %>
+        <%= yield %>
+    <% if user_signed_in? %>
+      <div class="footer">
+        <ul class="footer_menu">
+          <li><%= link_to user_path(current_user.id) do %><strong class="fa fa-home"></strong><% end %></li>
+          <li><a href="#"><strong class="fa fa-google"></strong></a></li>
+          <li><a href="#"><strong class="fa fa-twitter"></strong></a></li>
+          <li><a href="#"><strong class="fa fa-search"></strong></a></li>
+        </ul>
+      </div>
+    <% end %>
   </body>
 </html>

@@ -27,3 +27,7 @@ set :environment, :development
 every 6.hours do
     runner "Article.get_news"
 end
+
+every 6.hours do 
+    runner "Article.get_technologynews"
+end

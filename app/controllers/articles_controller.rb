@@ -44,5 +44,9 @@ class ArticlesController < ApplicationController
     user = current_user.id
     article.create(user_id: user, article_id: article)
   end
+
+  def techcrunch
+    @articles = Article.where(genre_id: 2).order(created_at: :desc).page(params[:page])
+  end
 end
 

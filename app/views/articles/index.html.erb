@@ -1,14 +1,15 @@
 
 <%= link_to "ログアウト", destroy_user_session_path, method: :delete %><br>
+<%= link_to "techcrunch", techcrunch_path %>
 <div class="container">
     <div class="row">
         <div id="news col-xs-offset-2 col-xs-8">
             <h1>最新記事</h1>
             <ul>
                 <div id="article_lists">
-                    <%= render 'article_list' %>
+                    <strong><%= render 'article_list' %></strong>
                 </div>
-                <div class="more"><%= link_to_next_page @articles, 'もっと見る', remote: true, id: 'view_more' %></div>
+                <div class="more view_more"><%= link_to_next_page @articles, 'もっと見る', remote: true %></div>
             </ul>
         </div>
     </div>
