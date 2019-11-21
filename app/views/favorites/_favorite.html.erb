@@ -1,0 +1,11 @@
+<% if article.favorited_by?(current_user) %>
+    <%= link_to article_favorites_path(article), method: :delete, remote: true do %>
+        <i class="fa fa-thumbs-up" style="color: orange;" aria-hidden="true"></i>
+        <%= article.favorites.count %>
+    <% end %>
+<% else %>
+    <%= link_to article_favorites_path(article), method: :post, remote: true do %>
+        <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+        <%= article.favorites.count %>
+    <% end %>
+<% end %>

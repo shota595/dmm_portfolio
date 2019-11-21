@@ -1,0 +1,208 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+
+ @import "bootstrap";
+ @import "font-awesome";
+
+ul {
+    list-style: none;
+}
+
+.clearfix {
+    content: '';
+    clear: both;
+    display: block;
+}
+
+body {
+    font-family: 'Londrina Solid', cursive;
+    background-color: #060709;
+    color: #d4f477;
+}
+
+//ヘッダー
+.header {
+    height: 110px;
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    background: linear-gradient(#060709 50%, #d4f477 50%);
+    text-align: center;
+}
+
+.header-title {
+    font-size: 80px;
+    position: relative;
+    display: inline-block;
+    background: linear-gradient(#d4f477 50%, #060709 50%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    white-space: nowrap;
+    line-height: 95px;
+}
+
+.header-title:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+
+
+//フッターメニュー
+ul.footer_menu {
+    margin: 0 auto;
+    padding: 12px 0;
+    width: 100%;
+    overflow: hidden;
+    display: table;
+    table-layout: fixed;
+    text-align: center;
+    height: 100px
+}
+
+ul.footer_menu li {
+    margin: 0;
+	padding: 0;
+	display: table-cell;
+	vertical-align:middle;
+	list-style-type: none;
+	font-size: 40px;
+    line-height: 15px;
+}
+
+ul.footer_menu li a:hover {
+    color: #3CB371;
+}
+
+ul.footer_menu li a i{
+	font-size: 24px;
+}
+
+ul.footer_menu li a {
+    border: none;
+	display: block;
+	color: 	#d4f477;
+	text-align: center;
+	text-decoration: none;
+}
+
+.footer_menu {
+	position: fixed;
+	bottom: 0;
+	left:0;
+	background: #060709;
+	z-index: 9999999999;
+	-moz-opacity: 0.9;
+	opacity: 0.9;
+}
+
+//ニュースの詳細ページ
+h1 {
+    font-size: 60px;
+    
+}
+
+
+.fa-thumbs-up {
+    font-size: 40px;
+}
+
+.content {
+    padding-top: 20px;
+    border-top: 2px solid gray;
+    font-size: 40px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid gray;
+}
+
+.author {
+    font-size: 30px;
+}
+
+.published-date {
+    font-size: 30px;
+}
+
+.url {
+    font-size: 30px;
+}
+
+.textarea {
+    margin-left:10%;
+    margin-right: 10%;
+    display: inline-block;
+}
+
+.favo {
+    float: right;
+    padding-top: 50px;
+}
+.sub {
+    float: left;
+}
+
+.label {
+    color: #749b00;
+    font-weight: bold;
+}
+
+
+//マイページ
+.btn-success {
+    background: linear-gradient(#d4f477, #749b00);
+    height: 300px;
+    margin-top: 50px;
+    border-radius: 20px;
+    font-size: 100px;
+    line-height: 260px;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+.btn-success p {
+    background: linear-gradient( to right,  rgb(0, 0, 0) 25%, rgb(150, 14, 14) 75% );
+    -webkit-background-clip: text;
+    color: transparent;
+}
+.btn-success:hover {
+    opacity: 0.6;
+}
+
+//ポップアップ
+.popup {
+    visibility: hidden;
+    position: absolute;
+    background: rgb(66, 66, 66);
+    width: 100%;
+    border: 3px solid #666666;
+    position: fixed;
+    height: 150px;
+    overflow: scroll;
+    bottom: 100px;
+    font-size: 20px;
+}
+.popup.active {
+    visibility: visible;
+    text-align: center;
+}
+
+.popup-content {
+    visibility: hidden;
+}
+
+.popup-content.active {
+    visibility: visible;
+}

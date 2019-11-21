@@ -5,3 +5,25 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+
+# require 'open-uri'
+# require 'news-api'
+
+# url = 'https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey='
+# article_serialized = open(url).read
+# articles = JSON.parse(article_serialized)
+
+# articles['articles'].each do |item|
+#     Article.create(author: item["author"])
+# end
+
+# require "open-uri"
+# require "news-api"
+
+# url = 'https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey='
+# article_serialized = open(url).read
+# articles = JSON.parse(article_serialized)
+
+# articles['articles'].each do |key|
+#     Article.create(title: key,  )

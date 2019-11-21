@@ -1,0 +1,14 @@
+<% @articles.each do |article| %>
+    <div class="article">
+        <li>
+            <div class="article">
+            <%= link_to article_path(article.id) do %>
+                <div><%= image_tag 'no_image.jpg' %></div>
+                <ul>
+                    <li><%= article.title %></li>
+                    <li><%= article.favorites.count %></li>
+                </ul>
+            <% end %><br>
+        </li>
+    </div>
+<% end %>

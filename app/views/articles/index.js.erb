@@ -1,0 +1,3 @@
+$('#article_lists').append("<%= escape_javascript(render partial: 'articles/article_list', articles: @articles) %>");
+$('.views_more').replaceWith("<%= escape_javascript(
+    link_to_next_page(@articles, 'もっと見る', remote: true, id: 'view_more')) %>");

@@ -1,0 +1,10 @@
+<h1>Search Words</h1>
+<% @words.each do |word| %>
+    <li>
+        <%= word.word_name %>
+        <%= word.word_meaning %>
+        <%= link_to user_searchword_path(current_user.id, word.id), method: :delete do %>
+            <i class="btn btn-warning">✖</i>
+        <% end %>
+    </li>
+<% end %>
