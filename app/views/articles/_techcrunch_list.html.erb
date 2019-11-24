@@ -1,14 +1,13 @@
 <% @articles.each do |article| %>
-    <div class="article">
-        <li>
-            <div class="article">
-            <%= link_to article_path(article.id) do %>
-                <div><%= image_tag 'no_image.jpg' %></div>
-                <ul>
-                    <li><%= article.title %></li>
-                    <li><%= article.favorites.count %></li>
-                </ul>
-            <% end %><br>
-        </li>
-    </div>
+    <li class="article clearfix">
+        <%= link_to article_path(article.id) do %>
+            <% if article.article_image %>
+                <div class="article-left"><img src=<%= article.article_image %>></div>
+            <% end %>
+                <ul class="article-right">
+                <li class="article-title"><%= truncate(article.title, length: 50) %></li>
+                <li class="iine-count">👍<%= article.favorites.count %></li>
+            </ul>
+        <% end %><br>
+    </li>
 <% end %>

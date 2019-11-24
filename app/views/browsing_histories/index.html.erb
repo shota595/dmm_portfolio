@@ -1,6 +1,12 @@
-<%= link_to "記事一覧", articles_path %>
-<% @histories.each do |history| %>
-    <%= link_to article_path(history.article_id) do %>
-        <p><%= history.article[:title] %></p>
-    <% end %>
-<% end %>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-offset-2 col-xs-8">
+            <h2>閲覧記事一覧</h2>
+            <ul>
+                <div id="browsed_article_lists">
+                    <strong><%= render 'browsing_histories' %></strong>
+                </div>
+            </ul>
+        </div>
+    </div>
+</div>

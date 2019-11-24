@@ -126,3 +126,11 @@ $(document).on('turbolinks:load', function() {
         $(".popup, .popup-content").removeClass("active");
     });
 });
+
+$(function() {
+    $('.quiz').on('click', function() {
+        var array = [];
+        var hoge = gon.words;
+        alert(hoge);
+    });
+});

@@ -1,0 +1,15 @@
+<% @histories.each do |history| %>
+    <li class="article clearfix">
+        <%= link_to article_path(history.article_id) do %>
+            <% if history.article[:article_url].present? %>
+                <div class="article-left"><img src=<%= history.article[:article_image] %>></div>
+            <% else %>
+                <div class="article-left"><img src='no_image.jpg'></div>
+            <% end %>
+            <ul class="article-right">
+                <li class="article-title"><%= truncate(history.article[:title], length: 50) %></li>
+                <li class="iine-count">👍<%= history.article.favorites.count %></li>
+            </ul>
+        <% end %><br>
+    </li>
+<% end %>
