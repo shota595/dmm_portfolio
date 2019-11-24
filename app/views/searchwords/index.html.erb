@@ -1,10 +1,23 @@
-<h1>Search Words</h1>
-<% @words.each do |word| %>
-    <li>
-        <%= word.word_name %>
-        <%= word.word_meaning %>
-        <%= link_to user_searchword_path(current_user.id, word.id), method: :delete do %>
-            <i class="btn btn-warning">✖</i>
+<h1 class="seachword-title">Search Words</h1>
+<table class="table">
+    <thead>
+            <tr class="table-header">
+                <th>English</th>
+                <th>Japanese</th>
+                <th></th>
+            </tr>
+    </thead>
+    <tbody>
+        <% @words.each do |word| %>
+            <tr class="active">
+                <td><%= word.word_name %></td>
+                <td><%= word.word_meaning %></td>
+                <td>
+                    <%= link_to user_searchword_path(current_user.id, word.id), method: :delete do %>
+                        <i class="btn btn-warning">✖</i>
+                    <% end %>
+                </td>
+            </tr>
         <% end %>
-    </li>
-<% end %>
+    </tbody>
+</table>
