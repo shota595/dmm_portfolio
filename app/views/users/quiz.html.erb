@@ -1,0 +1,11 @@
+<h2>単語クイズ</h2>
+<p>問題： <%= @q %></p>
+<form name="answerform">
+answer = <%= @a %>
+<% if input == answer %>
+    <p>正解</p>
+<% else %>
+    <p>不正解</p>
+<% end %>
+
+<button user_quiz_path(current_user.id)>次の問題</button>

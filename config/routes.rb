@@ -25,6 +25,7 @@ Rails.application.routes.draw do
     resources :browsing_histories, only: [:index]
     resources :searchwords, only: [:index, :create, :destroy]
   end
+  get 'users/:id/quiz' => 'users#quiz', as: 'user_quiz'
   resources :genres, only: [:create]
   get "techcrunch" => "articles#techcrunch", as: "techcrunch"
 end

@@ -27,6 +27,8 @@ class Article < ApplicationRecord
 
   paginates_per 10
 
+  attachment :image
+
 
   def self.get_news
     require "open-uri"
@@ -41,7 +43,7 @@ class Article < ApplicationRecord
       begin
         article =Article.create!(
           {author:item["author"],title:item["title"],content:item["content"],
-          article_image:item["url"] ,article_url:item["urlToImage"] ,
+          article_image:item["urlToImage"] ,article_url:item["url"] ,
           published_at:item["publishedAt"],genre_id:1})
       rescue
         next
@@ -62,7 +64,7 @@ class Article < ApplicationRecord
       begin
         article =Article.create!(
           {author:item["author"],title:item["title"],content:item["content"],
-          article_image:item["url"] ,article_url:item["urlToImage"] ,
+          article_image:item["urlToImage"] ,article_url:item["url"] ,
           published_at:item["publishedAt"],genre_id:2})
       rescue
         next

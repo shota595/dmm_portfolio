@@ -29,9 +29,9 @@ ul {
 }
 
 body {
-    font-family: 'Londrina Solid', cursive;
+    font-family: Georgia,游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,メイリオ,Meiryo,serif;
     background-color: #060709;
-    color: #d4f477;
+    color: #c2c2c2;
 }
 
 //ヘッダー
@@ -40,7 +40,7 @@ body {
     width: 100%;
     margin: 0;
     overflow: hidden;
-    background: linear-gradient(#060709 50%, #d4f477 50%);
+    background: linear-gradient(#060709 50%, #c2c2c2 50%);
     text-align: center;
 }
 
@@ -48,7 +48,7 @@ body {
     font-size: 80px;
     position: relative;
     display: inline-block;
-    background: linear-gradient(#d4f477 50%, #060709 50%);
+    background: linear-gradient(#c2c2c2 50%, #060709 50%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     white-space: nowrap;
@@ -85,7 +85,7 @@ ul.footer_menu li {
 }
 
 ul.footer_menu li a:hover {
-    color: #3CB371;
+    color: #c2c2c2;
 }
 
 ul.footer_menu li a i{
@@ -95,7 +95,7 @@ ul.footer_menu li a i{
 ul.footer_menu li a {
     border: none;
 	display: block;
-	color: 	#d4f477;
+	color: 	#c2c2c2;
 	text-align: center;
 	text-decoration: none;
 }
@@ -156,28 +156,29 @@ h1 {
 }
 
 .label {
-    color: #749b00;
+    color: #c2c2c2;
     font-weight: bold;
 }
 
 
 //マイページ
-.btn-success {
-    background: linear-gradient(#d4f477, #749b00);
-    height: 300px;
+.select {
+    background: #c2c2c2;
+    height: 150px;
     margin-top: 50px;
     border-radius: 20px;
-    font-size: 100px;
-    line-height: 260px;
+    font-size: 70px;
+    line-height: 120px;
     color: rgb(0, 0, 0);
     font-weight: bold;
 }
-.btn-success p {
-    background: linear-gradient( to right,  rgb(0, 0, 0) 25%, rgb(150, 14, 14) 75% );
+.select p {
+    height: 150px;
+    background: linear-gradient( to right,  rgb(0, 0, 0) 25%, rgb(44, 44, 44) 75% );
     -webkit-background-clip: text;
     color: transparent;
 }
-.btn-success:hover {
+.btn-secondary:hover {
     opacity: 0.6;
 }
 
@@ -185,7 +186,7 @@ h1 {
 .popup {
     visibility: hidden;
     position: absolute;
-    background: rgb(66, 66, 66);
+    background: rgb(53, 53, 53);
     width: 100%;
     border: 3px solid #666666;
     position: fixed;
@@ -205,4 +206,65 @@ h1 {
 
 .popup-content.active {
     visibility: visible;
+}
+
+//ニュース一覧ページ
+.article {
+    border-bottom: 2px solid #d4f477;
+    font-size: 35px;
+    padding-bottom: 40px;
+    padding-top: 40px;
+    width: 100%;
+}
+.article-left {
+    float: left;
+}
+.article-left img {
+    border-radius: 10px;
+    width: 200px;
+    height: 200px;
+}
+.article-right {
+    margin-left: 10px;
+    padding: 0;
+    width: 450px;
+    float: right;
+}
+.article-title {
+    color: #c2c2c2;
+}
+.iine-count {
+    text-align: right;
+    font-size: 50px;
+    color: #c2c2c2;
+}
+.view-more {
+    margin-bottom: 1000px;
+}
+.container {
+    padding-bottom: 120px;
+}
+.next-btn {
+    height: 60px;
+    border-radius: 15px;
+}
+
+//もっと見るボタン
+.more {
+    background: #c2c2c2;
+    height: 100px;
+    width: 80%;
+    font-size: 50px;
+    border-radius: 50px;
+    margin-left: 60px;
+    margin-top: 20px;
+
+}
+.more:link {
+    color: #060709;
+    text-decoration: none;
+    font-weight: bold;
+}
+.more:hover {
+    opacity: 0.8;
 }
