@@ -268,3 +268,18 @@ h1 {
 .more:hover {
     opacity: 0.8;
 }
+//seachwordsのindexページ
+.table-header th {
+    background: #c2c2c2;
+    color: #060709;
+    font-size: 40px;
+    font-weight: bold;
+}
+.active td {
+    font-size: 30px;
+    color: #c2c2c2;
+}
+.seachword-title {
+    margin-top: 100px;
+    margin-left: 100px;
+}
