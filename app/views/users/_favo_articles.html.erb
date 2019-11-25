@@ -1,0 +1,13 @@
+<% @favos.each do |favo| %>
+    <li class="article clearfix">
+        <%= link_to article_path(favo.article.id) do %>
+            <% if favo.article.article_image %>
+                <div class="article-left"><img src=<%= favo.article.article_image %>></div>
+            <% end %>
+                <ul class="article-right">
+                <li class="article-title"><%= truncate(favo.article.title, length: 50) %></li>
+                <li class="iine-count">👍<%= favo.article.favorites.count %></li>
+            </ul>
+        <% end %><br>
+    </li>
+<% end %>
