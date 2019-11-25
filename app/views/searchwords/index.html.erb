@@ -9,11 +9,11 @@
     </thead>
     <tbody>
         <% @words.each do |word| %>
-            <tr class="active">
+            <tr class="active" id="search-#{word.id}">
                 <td><%= word.word_name %></td>
                 <td><%= word.word_meaning %></td>
                 <td>
-                    <%= link_to user_searchword_path(current_user.id, word.id), method: :delete do %>
+                    <%= link_to user_searchword_path(current_user.id, word.id), method: :delete, remote: true do %>
                         <i class="btn btn-warning">✖</i>
                     <% end %>
                 </td>

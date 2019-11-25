@@ -1,5 +1,6 @@
 class SearchwordsController < ApplicationController
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :authenticate_user!
 
   def index
     @words = current_user.searchwords.order(created_at: :desc).all
@@ -9,8 +10,8 @@ class SearchwordsController < ApplicationController
   end
 
   def destroy
-    word = current_user.searchwords.find(params[:id])
-    word.destroy
+    @word = current_user.searchwords.find(params[:id])
+    @word.destroy
     redirect_to user_searchwords_path
   end
 end
