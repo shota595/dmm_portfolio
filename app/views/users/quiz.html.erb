@@ -1,11 +1,23 @@
-<h2>単語クイズ</h2>
-<p>問題： <%= @q %></p>
-<form name="answerform">
-answer = <%= @a %>
-<% if input == answer %>
-    <p>正解</p>
-<% else %>
-    <p>不正解</p>
-<% end %>
+<div class="container">
+    <div class="row">
+        <div class="quiz">
+            <div class="quiz-title">
+                <h1>単語クイズ</h2>
+            </div>
+            <p class="question">問題： <%= @q %></p>
+            <input type="hidden" name="hidden" class="correct" val=<%= @a %>>
+            <form name="answerform">
+            <input type="text" class="answer_form"><br>
+            <button type="button" class="check">答え合わせ</button><br>
 
-<button user_quiz_path(current_user.id)>次の問題</button>
+            <div class="announce"></div>
+            <div class="youranswer"></div>
+            <div class="aaa"></div>
+            <div class="next-quiz">
+                <%= link_to user_quiz_path(current_user.id) do %>
+                    <button>次の問題</button>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>

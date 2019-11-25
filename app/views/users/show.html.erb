@@ -1,11 +1,11 @@
 <ul>
     <div class="upper-btn">
-        <li><%= link_to articles_path do %><div class="select btn btn-secondary col-12"><p>FaVo Articles</p></div><% end %></li>
+        <li><%= link_to favo_articles_path(current_user.id) do %><div class="select btn btn-secondary col-12"><p>FaVo Articles</p></div><% end %></li>
         <li><%= link_to user_searchwords_path(current_user.id) do %><div class="select btn btn-secondary col-12"><p>SearcHed WOrds</p></div><% end %></li>
     </div>
     <div class="down-btn">
         <li><%= link_to user_browsing_histories_path(current_user.id) do %><div class="select btn btn-secondary col-12"><p>BrowsEd ArTicleS</p></div><% end %></li>
-        <li><%= link_to user_quiz_path(current_user.id) do %><div class="select btn btn-secondary col-12"><p>COMING SOON!!</p></div><% end %></li>
+        <li><%= link_to user_quiz_path(current_user.id) do %><div class="select btn btn-secondary col-12"><p>Quiz!!</p></div><% end %></li>
         <li><%= link_to destroy_user_session_path, method: :delete do %><div class="select btn btn-secondary col-12"><p>Log Out</p></div><% end %></li>
     </div>
 </ul>
