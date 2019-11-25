@@ -23,3 +23,10 @@ test:
 production:
   <<: *default
   database: db/production.sqlite3
+  adapter: mysql2
+  encoding: utf8mb4
+  charset: utf8mb4
+  collation: utf8mb4_general_ci
+  host: tnewsinstance.cs0lprzhndyf.ap-northeast-1.rds.amazonaws.com
+  username: root
+  password: shota0677

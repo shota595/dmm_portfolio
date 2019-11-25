@@ -179,6 +179,7 @@ GEM
     msgpack (1.3.1)
     multi_json (1.14.1)
     mustermann (1.0.3)
+    mysql2 (0.5.2)
     netrc (0.11.0)
     news-api (0.2.0)
     nio4r (2.5.2)
@@ -324,6 +325,7 @@ DEPENDENCIES
   jquery-rails
   kaminari (~> 0.17.0)
   listen (>= 3.0.5, < 3.2)
+  mysql2
   news-api
   puma (~> 3.11)
   rails (~> 5.2.3)
@@ -341,7 +343,7 @@ DEPENDENCIES
   whenever
 
 RUBY VERSION
-   ruby 2.5.5p157
+   ruby 2.5.7p206
 
 BUNDLED WITH
    2.0.2

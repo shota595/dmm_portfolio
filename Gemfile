@@ -75,3 +75,7 @@ gem 'dotenv-rails'
 gem 'whenever', require: false
 gem 'gon'
 gem 'dotenv-rails'
+
+group :production do
+  gem 'mysql2'
+end
