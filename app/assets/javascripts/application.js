@@ -127,10 +127,25 @@ $(document).on('turbolinks:load', function() {
     });
 });
 
-$(function() {
-    $('.quiz').on('click', function() {
-        var array = [];
-        var hoge = gon.words;
-        alert(hoge);
+$(document).on('turbolinks:load', function() {
+    $(function() {
+        $('.check').on('click', function() {
+            let useranswer = $('.answer_form').val();
+            var correctanswer = gon.correct_answer;
+            console.log(correctanswer);
+            if (useranswer == correctanswer){
+                $('.announce').append().text('正解');
+                $('.youranswer').append().html(`<label>Your Answer</label>
+                                                <h2>` + useranswer + `</h2>`);
+                $('.aaa').append().html(`<label>Correct Answer</label>
+                                        <p>` + correctanswer + `</p>`);
+            } else {
+                $('.announce').append().text('不正解');
+                $('.youranswer').append().html(`<label>Your Answer</label>
+                                                <h2>` + useranswer + `</h2>`);
+                $('.aaa').append().html(`<label>Correct Answer</label>
+                                        <p>` + correctanswer + `</p>`);
+            }
+        });
     });
 });

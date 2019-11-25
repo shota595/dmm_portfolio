@@ -28,4 +28,5 @@ Rails.application.routes.draw do
   get 'users/:id/quiz' => 'users#quiz', as: 'user_quiz'
   resources :genres, only: [:create]
   get "techcrunch" => "articles#techcrunch", as: "techcrunch"
+  get "users/:id/favorites" => "users#favo_article", as: "favo_articles"
 end

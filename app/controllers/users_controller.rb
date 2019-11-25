@@ -8,6 +8,10 @@ class UsersController < ApplicationController
         @user = User.find(params[:id])
     end
 
+    def favo_article
+        @favos = current_user.favorites.all
+    end
+
     def quiz
     #     words = current_user.searchwords.where(user_id: current_user.id)
     #     @selects  = []
@@ -19,12 +23,11 @@ class UsersController < ApplicationController
         # @hoge = array
         search = Searchword.where(user_id: current_user.id)
         words = search.pluck(:word_name, :word_meaning)
-        word = words.simple
+        word = words.sample
         array = []
         array << word
         @q = array[0][0]
         @a = array[0][1]
-        
-        
+        gon.correct_answer = array[0][1]
     end 
 end
