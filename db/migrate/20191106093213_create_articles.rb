@@ -7,7 +7,6 @@ class CreateArticles < ActiveRecord::Migration[5.2]
       t.text :article_url
       t.string :author
       t.string :published_at
-      t.references :genre, foreign_key: true
 
       t.timestamps
     end

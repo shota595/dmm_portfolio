@@ -5,5 +5,7 @@ class CreateGenres < ActiveRecord::Migration[5.2]
 
       t.timestamps
     end
+
+    add_reference :articles, :genre, foreign_key: true
   end
 end
