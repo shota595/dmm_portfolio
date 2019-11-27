@@ -22,13 +22,15 @@ class UsersController < ApplicationController
         # words = Searchword.pluck(user_id: current_user.id, :)
         # array << words
         # @hoge = array
-        search = Searchword.where(user_id: current_user.id)
-        words = search.pluck(:word_name, :word_meaning)
-        word = words.sample
-        array = []
-        array << word
-        @q = array[0][0]
-        @a = array[0][1]
-        gon.correct_answer = array[0][1]
+        @search = Searchword.where(user_id: current_user.id)
+        if @search.present?
+            words = @search.pluck(:word_name, :word_meaning)
+            word = words.sample
+            array = []
+            array << word
+            @q = array[0][0]
+            @a = array[0][1]
+            gon.correct_answer = array[0][1]
+        end
     end 
 end

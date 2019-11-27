@@ -4,7 +4,11 @@
             <h1>閲覧記事一覧</h1>
             <ul>
                 <div id="browsed_article_lists">
-                    <strong><%= render 'browsing_histories' %></strong>
+                    <% if @histories.present? %>
+                        <strong><%= render 'browsing_histories' %></strong>
+                    <% else %>
+                        <h2>閲覧記事がありません</h2>
+                    <% end %>
                 </div>
             </ul>
         </div>

@@ -1,10 +1,12 @@
 <% @articles.each do |article| %>
     <li class="article clearfix">
         <%= link_to article_path(article.id) do %>
-            <% if article.article_url.present? %>
-                <div class="article-left"><img src=<%= article.article_image %>></div>
+            <% unless article.article_image == 'null' %>
+                <div class="article-left">
+                    <img src=<%= article.article_image %>>
+                </div>
             <% else %>
-                <div class="article-left"><img src='no_image.jpg'></div>
+                <div class="article-left"><%= image_tag "no_image.jpg" %></div>
             <% end %>
             <ul class="article-right">
                 <li class="article-title"><%= truncate(article.title, length: 50) %></li>

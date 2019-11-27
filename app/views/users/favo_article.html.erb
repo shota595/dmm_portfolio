@@ -4,7 +4,11 @@
             <h1>お気に入り記事</h1>
             <ul>
                 <div id="favo_article_lists">
-                    <strong><%= render 'users/favo_articles' %></strong>
+                    <% if @favos.present? %>
+                        <strong><%= render 'users/favo_articles' %></strong>
+                    <% else %>
+                        <h2>お気に入り記事がありません</h2>
+                    <% end %>
                 </div>
             </ul>
         </div>

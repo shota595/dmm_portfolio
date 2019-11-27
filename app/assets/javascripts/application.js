@@ -104,8 +104,6 @@ function translate_word(selectedStr, displayFlag) {
         
         if(selectedStr.match(/^[^ ]+[^ ]$/)) {　　//選択した範囲にスペースを含んでいると分割して保存する
             save_translatedword(translation, selectedStr);
-        } else if (selectedStr.match(/[a-zA-Z]/)) {
-
         } else {
             save_splitword(selectedStr);
         }
@@ -114,8 +112,8 @@ function translate_word(selectedStr, displayFlag) {
 
 function save_splitword(selectedStr) {　　//選択した範囲に複数単語が入っている場合
     var array = [];                    //別々でＤＢに保存する
-    separate_words = array.push(selectedStr.split(/ +/));
-    console.log(array);
+    var separate_words = array.push(selectedStr.split(/ +/));
+    console.log(separate_words);
     for(var i=0; i<=array.length; i++){
         translate_word(array[0][i],false);
     }

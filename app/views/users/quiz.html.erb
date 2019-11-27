@@ -4,20 +4,24 @@
             <div class="quiz-title">
                 <h1>単語クイズ</h2>
             </div>
-            <p class="question">問題： <%= @q %></p>
-            <input type="hidden" name="hidden" class="correct" val=<%= @a %>>
-            <form name="answerform">
-            <input type="text" class="answer_form"><br>
-            <button type="button" class="check">答え合わせ</button><br>
+            <% if @search.present? %>
+                <p class="question">問題： <%= @q %></p>
+                <input type="hidden" name="hidden" class="correct" val=<%= @a %>>
+                <form name="answerform">
+                <input type="text" class="answer_form"><br>
+                <button type="button" class="check">答え合わせ</button><br>
 
-            <div class="announce"></div>
-            <div class="youranswer"></div>
-            <div class="aaa"></div>
-            <div class="next-quiz">
-                <%= link_to user_quiz_path(current_user.id) do %>
-                    <button>次の問題</button>
-                <% end %>
-            </div>
+                <div class="announce"></div>
+                <div class="youranswer"></div>
+                <div class="aaa"></div>
+                <div class="next-quiz">
+                    <%= link_to user_quiz_path(current_user.id) do %>
+                        <button>次の問題</button>
+                    <% end %>
+                </div>
+            <% else %>
+                <h2>検索ワードがありません</h2>
+            <% end %>
         </div>
     </div>
 </div>
