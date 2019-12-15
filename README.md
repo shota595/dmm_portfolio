@@ -1,24 +1,7 @@
-# README
+# Trans news
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+this service enable you to check latest global news and to provide your English skills on one page at the same time. you don't need to use a dictionary to find out vocabularies you can't read.
 
-Things you may want to cover:
+# Usage
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+...under construction...
