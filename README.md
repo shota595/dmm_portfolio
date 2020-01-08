@@ -1,14 +1,23 @@
-## Trans news
+## Trans new
 
-this service enable you to check latest global news and to provide your English skills on one page at the same time. you don't need to use a dictionary to find out vocabularies you can't read.
+このサイトはジャンル別に海外ニュース（英語）を確認できます。同時に、わからない英単語は選択するだけでその場で翻訳されます。
+（※ニュースの詳細画面でのみ翻訳可能）
+英語の学習と世界の時事をひとつにまとめたサイトになっています。辞書を開く手間からあなたを救います。
 
-## Usage
+## 機能
 
-...under construction...
+主に、このサイトの機能は
+・最新ニュースの自動取得
+・英語翻訳機能
+・ユーザーが検索した英単語の復習（単語テストあり）
+この三つの機能から構成されています。
+他にも、シンプルなレイアウト、直感的な操作を意識して作成いたしました。
 
-##Vertion
 
-*Ruby 2.5.7
-*Ruby on Rails 5.2.3
-*Bootstrap 4
+##バージョン
+
+・Ruby 2.5.7
+・Ruby on Rails 5.2.3 
+・Bootstrap 4
+
 
